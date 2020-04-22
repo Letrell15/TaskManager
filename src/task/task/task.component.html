@@ -1,0 +1,26 @@
+<div style="padding-left: 100px;">
+
+  <div class="row" style="margin-bottom: 10px;">
+    <div class="col-md-3">
+      <h1>Current Tasks:</h1>
+    </div>
+    <div class="col-md-3" style="margin-top: 20px;">
+      <button type="button" class="btn btn-primary btn-lg" [routerLink]="['/addTask']">Add Task</button>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let task of tasks">
+    <div class="col-md-2">
+      <div>
+        <p class="task">{{task.taskName}}</p>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-success" [routerLink]="['/update', task.id]">Update</button>
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-danger" [routerLink]="['/delete', task.id]">Delete</button>
+    </div>
+  </div>
+
+</div>
